@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  web:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4000:3000"
+    volumes:
+      - /app
+    environment:
+      NODE_ENV: production
+      API_BASE_URL: ${API_BASE_URL}
+      STATIC_BASE_URL: ${STATIC_BASE_URL}
+      IMAGES_DOMAIN: ${IMAGES_DOMAIN}
+    networks:
+      - express-typeorm_express-pg
+
+
+networks:
+  express-typeorm_express-pg:
+    external: true

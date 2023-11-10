@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  output: 'standalone',
+  images: {
+    domains: [`${process.env.IMAGES_DOMAIN}` || 'localhost'],
+  },
 };
 
 module.exports = nextConfig;

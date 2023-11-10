@@ -15,6 +15,9 @@
 /.next/
 /out/
 
+# vscode
+/.vscode
+
 # production
 /build
 
@@ -29,6 +32,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
+.env
 .env*.local
 
 # vercel
